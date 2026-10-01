@@ -13,7 +13,7 @@
         <p>Dando nova esperança para animais indefesos.</p>
  </header>
  <nav>
-    <input type="checkbox" id="menu-toggle">
+    <input type="checkbox" id="menu-toggle" aria-label="Abrir menu de navegação">
     <label for="menu-toggle" class="menu-icon">☰</label>
 
     <div class="menu">
@@ -30,6 +30,9 @@
 
         <a href="?pagina=cadastro" data-route="cadastro">Cadastro</a>
     </div>
+    <button type="button" id="alto-contraste" aria-pressed="false">
+    Alto contraste
+    </button>
 </nav>
  <main id="app">
     <!-- Conteúdo carregado dinamicamente pelo JavaScript -->

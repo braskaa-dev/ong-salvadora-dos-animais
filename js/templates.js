@@ -101,12 +101,12 @@ export const templates = {
                 <span class="badge">Voluntários</span>
             </p>
 
-            <div class="alerta">
+            <div class="alerta" role="alert">
                 <strong>Atenção:</strong>
                 As vagas para voluntários são limitadas. Faça seu cadastro para participar das próximas ações.
             </div>
 
-            <div class="toast">
+            <div class="toast" role="status" aria-live="polite">
                 <strong>Cadastro realizado!</strong>
                 Seus dados foram recebidos pela ONG.
             </div>
