@@ -2,7 +2,7 @@ export const templates = {
     inicio: `
         <section>
             <h2>Sobre a ONG</h2>
-            <img src="../imagens/onganimais.png" alt="dados para contato com a ONG" width="500">
+            <img src="../imagens/onganimais.webp" alt="dados para contato com a ONG" width="500">
             <p>
                 A <strong>ONG Salvadora dos Animais</strong> atua em resgate, cuidados e adoção dos animais em situação de vulnerabilidade.
             </p>

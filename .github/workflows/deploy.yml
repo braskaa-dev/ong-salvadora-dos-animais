@@ -1,0 +1,51 @@
+﻿name: Deploy para GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+
+      - name: Preparar arquivos de produção
+        run: |
+          mkdir -p dist/css dist/js dist/imagens
+
+          cp html/index.min.html dist/index.html
+          cp css/style.min.css dist/css/style.min.css
+          cp js/*.min.js dist/js/
+          cp imagens/onganimais.webp dist/imagens/
+
+          sed -i 's#../css/style.min.css#css/style.min.css#g' dist/index.html
+          sed -i 's#../js/app.min.js#js/app.min.js#g' dist/index.html
+
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+
+      - name: Fazer upload do site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Publicar no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
