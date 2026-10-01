@@ -111,3 +111,21 @@ renderizar(app, paginaInicial);
 if (paginaInicial === "cadastro") {
     restaurarCadastro();
 }
+
+/* Modo de alto contraste */
+
+document.addEventListener("click", (evento) => {
+    const botaoContraste = evento.target.closest("#alto-contraste");
+
+    if (!botaoContraste) {
+        return;
+    }
+
+    const altoContrasteAtivo =
+        document.body.classList.toggle("alto-contraste");
+
+    botaoContraste.setAttribute(
+        "aria-pressed",
+        altoContrasteAtivo.toString()
+    );
+});

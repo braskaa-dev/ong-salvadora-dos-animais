@@ -313,3 +313,54 @@ main > section {
     font-size: var(--tamanho-pequeno);
     font-weight: bold;
 }
+
+/* Acessibilidade - foco visível */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+label:focus-visible {
+    outline: 3px solid var(--cor-secundaria-escura);
+    outline-offset: 3px;
+}
+
+/* Modo de alto contraste */
+
+body.alto-contraste {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+body.alto-contraste header,
+body.alto-contraste nav,
+body.alto-contraste main,
+body.alto-contraste footer,
+body.alto-contraste section,
+body.alto-contraste fieldset,
+body.alto-contraste .modal {
+    background-color: #000000;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+body.alto-contraste a {
+    color: #FFFF00;
+}
+
+body.alto-contraste input,
+body.alto-contraste button {
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+}
+
+body.alto-contraste nav a:hover,
+body.alto-contraste button:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+body.alto-contraste .submenu {
+    background-color: #000000;
+    border-color: #FFFFFF;
+}

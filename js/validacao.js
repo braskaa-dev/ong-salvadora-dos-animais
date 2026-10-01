@@ -10,6 +10,8 @@ export function validarCampo(campo) {
 
     if (campo.checkValidity()) {
         campo.classList.add("campo-valido");
+        campo.setAttribute("aria-invalid", "false");
+        campo.removeAttribute("aria-describedby");
         return true;
     }
 
@@ -17,6 +19,10 @@ export function validarCampo(campo) {
 
     const mensagem = document.createElement("span");
     mensagem.className = "mensagem-erro";
+
+    mensagem.id = `${campo.id}-erro`;
+    campo.setAttribute("aria-invalid", "true");
+    campo.setAttribute("aria-describedby", mensagem.id);
 
     if (campo.validity.valueMissing) {
         mensagem.textContent = "Este campo é obrigatório.";
