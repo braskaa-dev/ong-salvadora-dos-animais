@@ -29,6 +29,7 @@ jobs:
 
           sed -i 's#../css/style.min.css#css/style.min.css#g' dist/index.html
           sed -i 's#../js/app.min.js#js/app.min.js#g' dist/index.html
+          sed -i 's#../imagens/onganimais.webp#imagens/onganimais.webp#g' dist/js/templates.min.js
 
       - name: Configurar Pages
         uses: actions/configure-pages@v5
